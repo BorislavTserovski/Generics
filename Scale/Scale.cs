@@ -34,7 +34,7 @@ public class Scale<T> where T : IComparable<T>
     {
         throw new NotImplementedException();
     }
-    public T GetHavier()
+    public T GetHeavier()
     {
         if (left.CompareTo(right) > 0)
         {
