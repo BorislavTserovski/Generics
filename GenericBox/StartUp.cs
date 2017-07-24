@@ -1,4 +1,5 @@
 ﻿using System;
+using Custom_List;
 
 public class StartUp
 {
@@ -31,6 +32,9 @@ public class StartUp
                     break;
                 case "Min":
                     Console.WriteLine(myList.Min());
+                    break;
+                case "Sort":
+                    myList = Sorter.Sort(myList);
                     break;
                 case "Print":
                     foreach (var variable in myList.Values)

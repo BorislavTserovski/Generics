@@ -1,16 +1,22 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class CustomList<T> where T : IComparable<T>
+public class CustomList<T>:IEnumerable<T> where T : IComparable<T>
 {
     private List<T> values;
 
-    public CustomList()
+    public CustomList() : this(Enumerable.Empty<T>())
     {
-        this.Values = new List<T>();
     }
+
+    public CustomList(IEnumerable<T> collection)
+    {
+        this.Values = new List<T>(collection);
+    }
+
 
     public List<T> Values
     {
@@ -67,7 +73,22 @@ public class CustomList<T> where T : IComparable<T>
         return this.Values.Min();
     }
 
-  //
-       
+    public IEnumerator<T> GetEnumerator()
+    {
+        throw new NotImplementedException();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        throw new NotImplementedException();
+    }
+
+    IEnumerator<T> IEnumerable<T>.GetEnumerator()
+    {
+        throw new NotImplementedException();
+    }
+
+    //
+
 }
 
